@@ -3,7 +3,6 @@ class Node:
         self.val = val
         self.next = next
 
-
 class MyLinkedList:
 
     def __init__(self):
@@ -19,19 +18,19 @@ class MyLinkedList:
         return current.val
 
     def addAtHead(self, val: int) -> None:
-        new_node = Node(val, self.head)
-        self.head = new_node
+        newnode = Node(val, self.head)
+        self.head = newnode
         self.size += 1
 
     def addAtTail(self, val: int) -> None:
-        new_node = Node(val)
+        newnode = Node(val)
         if not self.head:
-            self.head = new_node
+            self.head = newnode
         else:
             current = self.head
             while current.next:
                 current = current.next
-            current.next = new_node
+            current.next = newnode  # ✅ fixed
         self.size += 1
 
     def addAtIndex(self, index: int, val: int) -> None:
