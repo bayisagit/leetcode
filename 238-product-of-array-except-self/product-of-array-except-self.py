@@ -3,10 +3,8 @@ class Solution:
         n=len(nums)
         prefixmult = [1] * n
         prefixmult[0] = nums[0]
-        premult = 1
-        postfixmult = [0] * n
+        postfixmult = [1] * n
         postfixmult[n-1] = nums[n-1]
-        postmult = 1
         for i in range(1,n):
             prefixmult[i] = prefixmult[i-1] * nums[i]
         for j in range(n-2,-1,-1):
